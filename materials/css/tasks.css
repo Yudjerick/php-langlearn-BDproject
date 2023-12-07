@@ -1,0 +1,235 @@
+
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    position: relative;
+    flex-grow: 2;
+    align-items: center;
+}
+        svg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 7;
+    pointer-events: none;
+}
+
+.task-zone{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.test-task{
+    font-family: 'Russo One', sans-serif;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.task-text{
+    padding-left: 1vmin;
+    font-family: 'Russo One', sans-serif;
+    color: rgb(255, 255, 255);
+    position: relative;
+    padding-bottom: 3vmin;
+    z-index: 3;
+}
+
+.task-text::after{
+    left: -50vmin;
+    content: '';
+    position: absolute;
+    background-color: rgb(53, 0, 102);;
+    width: 200vmax;
+    height: 100vmin;
+    bottom: 0;
+    z-index: -1;
+}
+
+.task-container{
+    border: 1mm solid rgb(53, 0, 102);
+    margin: 4vmin;
+    padding: 2.5vmin;
+    width: 60vw;
+    min-width: 300px;
+    background-color: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 3vmin;
+    overflow: hidden;
+}
+
+@media (max-aspect-ratio: 4/3){
+    .task-container{
+        min-width: 80vw;
+    }
+}
+
+.task-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+canvas{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+
+.line-effect{
+    filter: blur(10px);
+}
+
+.matchborder{
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.matchrow{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.matchelem, .order-elem{
+    font-family: 'Montserrat', sans-serif;
+    width:fit-content;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgb(34, 34, 34);
+    padding: 1vmin;
+    margin: 1vmin;
+    border: none;
+    position: relative;
+    z-index: 2;
+    border-radius: 100vmax;
+    filter: drop-shadow(0 0 5px rgba(82, 86, 92, 0.5));
+    border: solid 2px transparent;
+    cursor:pointer;
+}
+
+.order-elem{
+    cursor: grab;
+}
+
+button{
+    font-family: 'Montserrat', sans-serif;
+    width:fit-content;
+    height: fit-content;
+    background-color: rgb(53, 0, 102);
+    color: rgb(255, 255, 255);
+    padding: 1vmin;
+    margin: 1vmin;
+    border: none;
+    position: relative;
+    z-index: 2;
+    border-radius: 2vmin;
+    filter: drop-shadow(0 0 5px rgba(82, 86, 92, 0.5));
+    border: solid 2px transparent;
+}
+
+.matchelemselected{
+    background-color: rgb(117, 248, 205, 0.5);
+}
+
+.matchelemjoint{
+    box-sizing: border-box;
+    border: solid 2px rgb(53, 0, 102);
+    color:rgb(174, 174, 175);
+}
+
+/*.order-elem{
+    font-family: 'Russo One', sans-serif;
+    width:fit-content;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgb(34, 34, 34);
+    padding: 1vmin;
+    margin: 1vmin;
+    border: none;
+    position: relative;
+    z-index: 2;
+    border-radius: 2vmin;
+    filter: drop-shadow(0 0 5px rgba(82, 86, 92, 0.5));
+    border: solid 2px transparent;
+}*/
+
+.order-task-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 7vh;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.order-task-dropzone{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    min-height: 7vh;
+    position: relative;
+    border-radius: 3vmin;
+    border: solid rgb(255, 255, 255) 2px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    
+}
+
+.order-task-dropzone::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.task-settings-container{
+    max-width: 40vmax;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 2vmin;
+    margin: 4vmin;
+    overflow: hidden;
+    background-color: blanchedalmond;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2vmax;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.category-checkbox{
+    word-wrap: break-word;
+    font-size: 1.3vmax;
+}
+
+.file-input{
+    border-radius: 1vmin;
+    margin: 2vmin;
+    background-color: rgb(38, 41, 44);
+    filter: drop-shadow(0 0 0.1rem black);
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    padding: 1vmin;
+}

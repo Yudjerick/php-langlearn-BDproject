@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    container_name: app
+    build: 
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+  db:
+    container_name: db
+    build:
+      dockerfile: DatabaseDockerfile 
+    ports:
+      - 3306:3306
+
+volumes:
+  db_data:

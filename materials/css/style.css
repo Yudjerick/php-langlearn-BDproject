@@ -1,0 +1,76 @@
+body{
+    background-repeat: no-repeat;
+    background-size:100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    overflow-y: hidden;
+    position: relative;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+body {
+    position: relative;
+}
+
+nav{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-container{
+    overflow: hidden;
+    background-color: rgb(51, 54, 59);
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+}
+        .nav-button{
+    background-image: linear-gradient(to left,rgb(44, 45, 47), rgb(51, 53, 58));
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.2rem;
+    color: rgb(216, 216, 216);
+    flex-grow: 2;
+    text-align: start;
+    border: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    margin: 0;
+    filter: none;
+}
+
+.nav-button:hover, .burger-nav-button:hover{
+    color: white;
+}
+
+.nav-button::before, .burger-nav-button::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    background-image: linear-gradient(to left,rgb(59, 226, 255),rgba(255, 255, 255, 0));
+    /*background-color: rgba(130, 194, 255, 0.2);*/
+    transform: translate(-102%);
+    transition: 0.3s;
+}
+
+.nav-button:hover::before, .burger-nav-button:hover::before{
+    transform: translate(0);
+}
+
+.nav-button-text{
+    position: relative;
+    z-index: 4;
+    padding: 0;
+    padding-left: 1em;
+}
